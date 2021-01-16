@@ -1,0 +1,50 @@
+﻿<Window x:Class="TripApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TripApp"
+        mc:Ignorable="d"
+        Title="Travel" Height="450" Width="800" Closing="Window_Closing">
+    <Grid>
+
+        <ListView Name="LvTrips" HorizontalAlignment="Left" Height="258" Margin="20,109,0,0" VerticalAlignment="Top" Width="367" SelectionChanged="LvTrips_SelectionChanged" RenderTransformOrigin="0.5,0.5">
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Destination" Width="80" DisplayMemberBinding="{Binding Destination}" />
+                    <GridViewColumn Header="Name" Width="50" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Passport" Width="80" DisplayMemberBinding="{Binding Passport}"/>
+                    <GridViewColumn Header="Departure" Width="80" DisplayMemberBinding="{Binding Departure}"/>
+                    <GridViewColumn Header="Return" Width="80" DisplayMemberBinding="{Binding ReturnDate}"/>
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <Button Name="BtnSaveSelected" Content="Save Selected" Height="20" VerticalAlignment="Top" Margin="28,45,665.333,0" Click="BtnSaveSelected_Click"/>
+        <Label Content="Destination" Height="34" VerticalAlignment="Top" Margin="441,31,269.333,0"/>
+        <TextBox Name="txtDestination" Height="36" Margin="540,31,119.333,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Label Content="Name" Height="36" Margin="452,85,269.333,0" VerticalAlignment="Top" Width="72"/>
+        <Label Content="Passport" Height="39" Margin="455,140,269.333,0" VerticalAlignment="Top" Width="69"/>
+        <Label Content="Departure" Height="34" VerticalAlignment="Top" Margin="452,197,258.333,0"/>
+        <Label Content="Return" Height="34" VerticalAlignment="Top" Margin="452,250,258.333,0"/>
+        <Button Name="BtnAddTrip" Content="Add Trip" Height="38" Margin="452,315,254.333,0" VerticalAlignment="Top" Click="BtnAddTrip_Click"/>
+        <Button Name="BtnDeleteTrip" Content="Delete Trip" IsEnabled="false" Height="38" Margin="561,315,159.333,0" VerticalAlignment="Top" Click="BtnDeleteTrip_Click"/>
+        <Button Name="BtnUpdateTrip" Content="Update Trip" IsEnabled="false" Height="38" Margin="667,315,44.333,0" VerticalAlignment="Top" Click="BtnUpdateTrip_Click"/>
+        <TextBox Name="txtName" Height="36" Margin="540,85,119.333,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBox Name="txtPassport" Height="36" Margin="540,140,119.333,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <DatePicker Name="dpDeparture" Height="33" Margin="540,198,141.333,0" VerticalAlignment="Top"/>
+        <DatePicker Name="dpReturn" Height="26" Margin="540,251,147.333,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <DatePicker.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.078"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DatePicker.RenderTransform>
+        </DatePicker>
+
+
+    </Grid>
+</Window>
